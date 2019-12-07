@@ -7,11 +7,8 @@ Created on Wed Nov 20 01:33:18 2019
 from Customer import Customer
 from Restaurent import Restaurent
 from Reserve import Reserve
-<<<<<<< HEAD
+
 from FoodMenu import FoodMenu
-=======
-from Menu import Menu
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
 from Order import Order
 from datetime import datetime
 
@@ -35,17 +32,10 @@ order1.addMenu(menu4)
 
 def getRestaurentMenu(customer):
     menus=[]
-<<<<<<< HEAD
     menu1= FoodMenu(1,"Burger", 160,"Fast Food",0)
     menu2= FoodMenu(2,"Pizza", 560,"Fast Food",0)
     menu3= FoodMenu(3,"Biriani", 220,"Indian",0)
     menu4= FoodMenu(4,"Pitha", 50,"Bangla",0)
-=======
-    menu1= Menu(1,"Burger", 160,"Fast Food",0)
-    menu2= Menu(2,"Pizza", 560,"Fast Food",0)
-    menu3= Menu(3,"Biriani", 220,"Indian",0)
-    menu4= Menu(4,"Pitha", 50,"Bangla",0)
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
     menus=[menu1, menu2, menu3, menu4]
     return menus
 
@@ -133,8 +123,5 @@ def main():
         
 
 if __name__ == '__main__':
-<<<<<<< HEAD
     main()
-=======
-    main()
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
+

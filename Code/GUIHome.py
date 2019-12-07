@@ -2,16 +2,12 @@
 from tkinter import *
 from rms import *
 from NewMain import *
-<<<<<<< HEAD
 from tkinter import messagebox  
-=======
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
 
 class main(object):
     def __init__(self):
         self.restaurant = []
         self.customer = []
-<<<<<<< HEAD
         self.orders = []
         self.list_restaurant = []
         self.waiter = ['Sohel','Amin']
@@ -19,11 +15,6 @@ class main(object):
     def addOrders(self, order):
         self.order = order            
         self.orders.append(self.order)    
-=======
-        self.list_restaurant = []
-        self.waiter = ['Sohel','Amin']
-
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
 
     def add_customer(self, name, address, phone_no, check_in):
         self.cus = Customer(name, address, phone_no)
@@ -69,7 +60,6 @@ class Main_Window(Frame):
         #self.create_menu()
         self.add_menu(master)
         
-<<<<<<< HEAD
     def createMenu(self): 
         self.orderID=0
         self.var1=IntVar()
@@ -117,55 +107,6 @@ class Main_Window(Frame):
         print(self.total)
         self.lblMeal=Label(self, font=('arial', 18,'bold'), text="Total: "+str(self.total))
         self.lblMeal.grid(row=6,column=0)
-=======
-    def createMenu(self):    
-        var1=IntVar()
-        var2=IntVar()
-        var3=IntVar()
-        varBurgers=StringVar()
-        varPizza=StringVar()
-        varBiriyani=StringVar()
-        def chkFries():
-            if (var1.get()==1):
-                txtBurger.configure(state=NORMAL)
-                varBurgers.set("")
-            elif(var1.get()==0):
-                txtBurger.configure(state=DISABLED)
-                varBurgers.set("0")
-
-
-        def chkMomo():
-            if (var2.get()==1):
-                txtPizza.configure(state=NORMAL)
-                varPizza.set("")
-            elif(var2.get()==0):
-                txtPizza.configure(state=DISABLED)
-                varPizza.set("0")
-        def chkWings():
-            if (var3.get()==1):
-                txtBiriyani.configure(state=NORMAL)
-                varBiriyani.set("")
-            elif(var3.get()==0):
-                txtBiriyani.configure(state=DISABLED)
-                varBiriyani.set("0")
-        Burger= Checkbutton (self, text="Fries  \t\t 220 BDT",variable=var1,onvalue=1, offvalue=0,font=('arial',13,'bold'),command=chkFries).grid(row=1,column=0,sticky='w')
-        txtBurger=Entry(self,font=('arial',13,'bold'), textvariable=varBurgers ,width=6,justify='right',state=DISABLED)
-        txtBurger.grid(row=1,column =1)
-
-        Pizza= Checkbutton (self, text="Chicken Pizza\t 450 BDT",variable=var2,onvalue=1, offvalue=0,font=('arial',13,'bold'),command=chkMomo).grid(row=2,column=0,sticky='w')
-        txtPizza= Entry(self,font=('arial',13,'bold'), textvariable=varPizza ,width=6,justify='right',state=DISABLED)
-        txtPizza.grid(row=2,column =1)
-
-        Biriyani= Checkbutton (self, text="Chicken Biriyani\t 220 BDT",variable=var3,onvalue=1, offvalue=0,font=('arial',13,'bold'),command=chkWings).grid(row=3,column=0,sticky='w')
-        txtBiriyani= Entry(self,font=('arial',13,'bold'), textvariable=varBiriyani,width=6,justify='right',state=DISABLED)
-        txtBiriyani.grid(row=3,column =1)
-        self.total=0
-        self.total=(220*var1.get())+(450*var2.get())+(220*var3.get())
-        print(self.total)
-        lblMeal=Label(self, font=('arial', 18,'bold'), text="Total: "+str(self.total))
-        lblMeal.grid(row=6,column=0)
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
-        
         btnCalculate=Button(self, font=('arial', 18,'bold'), text="Calculate", command = self.calculate)
         btnCalculate.grid(row=4,column=0)
 
@@ -178,11 +119,7 @@ class Main_Window(Frame):
         self.cus_lbl_name.grid(row = 0, column = 0)
         self.cus_ent_name = Entry(self.cus_labelframe, width = 50)
         self.cus_ent_name.grid(row = 0, column = 1)
-<<<<<<< HEAD
         self.cus_bttn_add = Button(self.cus_labelframe, text = '   Place Order   ', command = self.placeOrder)
-=======
-        self.cus_bttn_add = Button(self.cus_labelframe, text = '   Add Customer   ', command = self.add_customer)
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
         self.cus_bttn_add.grid(row = 0, column = 2, padx = 10, pady = 10)
 
         self.cus_lbl_Address = Label(self.cus_labelframe, text="Address:",  padx = 10, pady = 10)
@@ -204,7 +141,6 @@ class Main_Window(Frame):
    
 
     def calculate(self):
-<<<<<<< HEAD
         self.total=0
         burgerTotal=220*int(self.varBurgers.get())
         PizzaTotal=450*int(self.varPizza.get())
@@ -280,9 +216,6 @@ class Main_Window(Frame):
         order.setTotal(self.total)
         main_obj.addOrders(order)
             
-=======
-        print(self.total)
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
     
     def add_customer(self):
         name = self.cus_ent_name.get()
@@ -373,11 +306,7 @@ class Main_Window(Frame):
 
     def add_menu(self, master):
         # Creating a Menu Bar
-<<<<<<< HEAD
         
-=======
-        """
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
         master.menuBar = Menu(root)
         master.config(menu=master.menuBar)
         p_res_add = popup_add_restaurant()
@@ -415,12 +344,9 @@ class Main_Window(Frame):
         resMenu = Menu(master.menuBar, tearoff=0)
         res_table = restaurant_table()
         resMenu.add_command(label="Show", command = res_table.create_table)
-<<<<<<< HEAD
-=======
-        resMenu.add_command(label="Add new", command = p_res_add.call_popup)
+        resMenu.add_command(label="Add Waiter", command = p_res_add.call_popup)
         resMenu.add_command(label="Delete")
         resMenu.add_command(label="Status")
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
         resMenu.add_command(label="Orders")
         resMenu.add_command(label="Payments")
         master.menuBar.add_cascade(label="Restaurant", menu=resMenu)
@@ -429,11 +355,7 @@ class Main_Window(Frame):
         helpMenu = Menu(master.menuBar, tearoff=0)
         helpMenu.add_command(label="About")
         master.menuBar.add_cascade(label="Help", menu=helpMenu)
-<<<<<<< HEAD
         
-=======
-        """
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
 
         # Exit GUI Cleanly
     def _quit(self):
@@ -459,46 +381,47 @@ class popup_add_restaurant(object):
         pass
     def call_popup(self):
         top = Toplevel()
-        self.res_labelframe = LabelFrame(top, text="Restaurant", padx = 20, pady = 20)
+        self.res_labelframe = LabelFrame(top, text="Waiter", padx = 20, pady = 20)
         self.res_labelframe.grid()
  
         self.res_lbl_name = Label(self.res_labelframe, text="Name:", padx = 10, pady = 10)
         self.res_lbl_name.grid(row = 0, column = 0)
         self.res_ent_name = Entry(self.res_labelframe, width = 50)
         self.res_ent_name.grid(row = 0, column = 1)
-        self.res_bttn_add = Button(self.res_labelframe, text = 'Add Restaurant', command = self.add_restaurant)
+        self.res_bttn_add = Button(self.res_labelframe, text = 'Add Waiter', command = self.add_restaurant)
         self.res_bttn_add.grid(row = 0, column = 2, padx = 10, pady = 10)
 
-        self.res_lbl_location = Label(self.res_labelframe, text="Location:",  padx = 10, pady = 10)
+        self.res_lbl_location = Label(self.res_labelframe, text="Mobile:",  padx = 10, pady = 10)
         self.res_lbl_location.grid(row = 1, column = 0)
         self.res_ent_location = Entry(self.res_labelframe, width = 50)
         self.res_ent_location.grid(row = 1, column = 1)
 
-        self.res_lbl_city = Label(self.res_labelframe, text="City:" , padx = 10, pady = 10)
+        self.res_lbl_city = Label(self.res_labelframe, text="Address:" , padx = 10, pady = 10)
         self.res_lbl_city.grid(row = 2, column = 0)
         self.res_ent_city = Entry(self.res_labelframe, width = 50)
         self.res_ent_city.grid(row = 2, column = 1)
 
         self.res_ent_name.focus_set()
 
-        self.add_waiters = BooleanVar()
-        Checkbutton(self.res_labelframe, text = "Add Waiters", onvalue = 0 ,variable = self.add_waiters).grid(row = 3, column = 0, sticky = W, padx = 10, pady = 10)
-        self.add_tables = BooleanVar()
-        Checkbutton(self.res_labelframe, text = "Add Tables", onvalue = 0 ,variable = self.add_tables).grid(row = 3, column = 1, sticky = W, padx = 100, pady = 10)
-        self.add_menus = BooleanVar()
-        Checkbutton(self.res_labelframe, text = "Add Menus", variable = self.add_menus).grid(row = 3, column = 2, sticky = W, padx = 10, pady = 10)
+        #self.add_waiters = BooleanVar()
+        #Checkbutton(self.res_labelframe, text = "Add Waiters", onvalue = 0 ,variable = self.add_waiters).grid(row = 3, column = 0, sticky = W, padx = 10, pady = 10)
+        #self.add_tables = BooleanVar()
+        #Checkbutton(self.res_labelframe, text = "Add Tables", onvalue = 0 ,variable = self.add_tables).grid(row = 3, column = 1, sticky = W, padx = 100, pady = 10)
+        #self.add_menus = BooleanVar()
+        #Checkbutton(self.res_labelframe, text = "Add Menus", variable = self.add_menus).grid(row = 3, column = 2, sticky = W, padx = 10, pady = 10)
 
     def add_restaurant(self):
         name = self.res_ent_name.get()
         location = self.res_ent_location.get()
         city = self.res_ent_city.get()
-        main_obj.add_restaurant(name, location, city)
+        #main_obj.add_restaurant(name, location, city)
         self.res_ent_name.delete(0, 'end')
         self.res_ent_location.delete(0, 'end')
         self.res_ent_city.delete(0, 'end')
         self.res_ent_name.focus_set()
-        main_obj.list_restaurant.append(name)
-        print('Restaurant: ', name, location, city, "Added.")
+        main_obj.waiter.append(name)
+        print(main_obj.waiter)
+        print('Waiter: ', name, location, city, "Added.")
 
 class popup_order(object):
     def __init__(self):
@@ -625,31 +548,17 @@ class customer_table(Frame):
         self.frame2= Frame(self)
         from tkinter.ttk import Treeview
         tv = Treeview(self)
-<<<<<<< HEAD
-        tv['columns'] = ('Mobile', 'waiter', 'bill')
+        tv['columns'] = ('Mobile', 'waiter', 'bill', 'status')
         tv.heading("#0", text='Customer Name', anchor='w')
         tv.column("#0", anchor="w")
         tv.heading('Mobile', text='Mobile')
         tv.column('Mobile', anchor='center', width=100)
         tv.heading('waiter', text='Waiter')
         tv.column('waiter', anchor='center', width=100)
-=======
-        tv['columns'] = ('address', 'phone_no', 'check_in', 'waiter', 'table', 'bill')
-        tv.heading("#0", text='Customer Name', anchor='w')
-        tv.column("#0", anchor="w")
-        tv.heading('address', text='Address')
-        tv.column('address', anchor='center', width=100)
-        tv.heading('phone_no', text='Phone No.')
-        tv.column('phone_no', anchor='center', width=100)
-        tv.heading('check_in', text='Check In To')
-        tv.column('check_in', anchor='center', width=100)
-        tv.heading('waiter', text='Waiter')
-        tv.column('waiter', anchor='center', width=100)
-        tv.heading('table', text='Table No.')
-        tv.column('table', anchor='center', width=100)
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
         tv.heading('bill', text='Current Bill')
         tv.column('bill', anchor='center', width=100)
+        tv.heading('status', text='Status')
+        tv.column('status', anchor='center', width=100)
         tv.grid(sticky = (N, S, W, E))
         self.frame1.treeview = tv
         self.frame1.grid_rowconfigure(0, weight = 1)
@@ -665,27 +574,21 @@ class customer_table(Frame):
         self.button3.grid(row = 3, column = 0)
 
     def LoadTable(self):
-<<<<<<< HEAD
         for order in main_obj.orders:
             name = order.Customer.name
             #address = order.Customer.address
             phone_no = order.Customer.mobile
             waiter = order.Customer.waiter
+            status = order.status
             #waiter = cus.waiter.name
             #table = cus.table.id
+            total=0.0
             bill = order.getTotal()
-            self.frame1.treeview.insert('', 'end', text=name, values=(phone_no,waiter, "", "", bill))
-=======
-        for cus in main_obj.customer:
-            name = cus.name
-            address = cus.address
-            phone_no = cus.phone_no
-            res = cus.restaurant.name
-            #waiter = cus.waiter.name
-            #table = cus.table.id
-            bill = cus.total_cost
-            self.frame1.treeview.insert('', 'end', text=name, values=(address, phone_no, res, "", "", bill))
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
+            fmenus = order.menus
+            for menu in fmenus:
+                total=total+(float(menu.price)*float(menu.quantity))
+            print(total)
+            self.frame1.treeview.insert('', 'end', text=name, values=(phone_no,waiter,total,status))
 
 
 class restaurant_table(Frame):
@@ -751,8 +654,4 @@ if __name__=="__main__":
     app = Main_Window(root)
     # kick off the windows event loop
     root.mainloop()
-<<<<<<< HEAD
-   
-=======
-   
->>>>>>> d2a745bda9a1d256d8834d1fa1105bb2bab79e3f
+

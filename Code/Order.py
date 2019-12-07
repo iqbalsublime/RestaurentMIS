@@ -15,6 +15,7 @@ class Order:
         self.Customer = Customer
         self.menus = []
         self.total = 0
+        self.status = 'Running'
 
 
     def addMenu(self, menu):
@@ -25,6 +26,9 @@ class Order:
     
     def setTotal(self, total):
         self.total = total
+    
+    def setStatus(self, status):
+        self.status = status    
         
     def getTotal(self):
         return self.total       
